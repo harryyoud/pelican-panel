@@ -3,7 +3,7 @@
 if [ -f /var/www/html/.env ]; then
   echo "external vars exist."
   # load env vars from .env
-  export $(grep -v '^#' .env | xargs)
+  export $(grep -v '^#' .env | xargs -d '\n')
 else
   echo "external vars don't exist."
   # webroot .env is symlinked to this path
